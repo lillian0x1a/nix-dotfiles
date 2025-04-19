@@ -19,6 +19,7 @@
     lunarvim
     gh
     nix-ld-rs
+    starship
   ];
 
   wsl = {
