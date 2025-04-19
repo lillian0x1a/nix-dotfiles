@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     nnn 
     lazygit
+    ghostty
   ];
   
   home.stateVersion = "24.11";
