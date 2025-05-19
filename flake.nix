@@ -22,6 +22,9 @@
       system = "x86_64-linux";
       modules = [
         ./machines/wsl/configuration.nix
+        home-manager.nixosModules.home-manager
+        vscode-server.nixosModule
+        nixos-wsl.nixosModules.wsl
       ];
     };
   };
