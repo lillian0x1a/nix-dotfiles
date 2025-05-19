@@ -12,7 +12,7 @@
     vscode-server.url = "github:nix-community/nixos-vscode-server";
 
     nixos-wsl = {
-      url = "github:ryantm/nixos-wsl";
+      url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -36,7 +36,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.nixos = import .home/wsl/home.nix;
+            home-manager.users.nixos = import ./home/wsl/home.nix;
           }
         vscode-server.nixosModules.default
           ({ config, pkgs, ... }: {

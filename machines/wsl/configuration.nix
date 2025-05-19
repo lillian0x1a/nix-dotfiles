@@ -1,10 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  #imports = [
-    # include NixOS-WSL modules
-  #  <nixos-wsl/modules>
-  #];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs;[
     wget
@@ -14,6 +10,10 @@
     nix-ld-rs
     starship
   ];
+
+  home-manager = {
+    enable = true;
+  };
 
   wsl = {
     enable = true;
