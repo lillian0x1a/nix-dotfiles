@@ -18,30 +18,10 @@
   };
 
   outputs = { self, nixpkgs, nixos-wsl, home-manager, vscode-server, ... }@inputs: {
-    # The host with the hostname `nixos` will use this configuration
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./machines/wsl/configuration.nix
-
-        #wsl-settings
-        nixos-wsl.nixosModules.default
-          {
-            system.stateVersion = "24.11";
-            wsl.enable = true;
-          }
-
-        #home-manager-settings
-        home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.nixos = import ./home/wsl/home.nix;
-          }
-        vscode-server.nixosModules.default
-          ({ config, pkgs, ... }: {
-            services.vscode-server.enable = true;
-          })
       ];
     };
   };

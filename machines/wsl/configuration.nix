@@ -1,6 +1,12 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
+  imports = [
+    ./wsl.nix
+    ./vscode-server.nix
+    ./home-manager.nix
+  ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs;[
     wget
@@ -10,18 +16,4 @@
     nix-ld-rs
     starship
   ];
-
-  home-manager = {
-    enable = true;
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.nixos = import ./home/wsl/home.nix;
-  };
-
-  wsl = {
-    enable = true;
-    defaultUser = "nixos";
-  };
-
-  system.stateVersion = "24.11";
 }
