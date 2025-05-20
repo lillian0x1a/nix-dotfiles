@@ -40,6 +40,7 @@
         system = "aarch64-darwin";
         modules = [
           ./machines/mac/configuration.nix
+          ./machines/mac/home-manager.nix
           home-manager.darwinModules.home-manager
         ];
       };
