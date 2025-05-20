@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../modules/wsl.nix
-    ../modules/vscode-server.nix
+    ./wsl.nix
+    ./vscode-server.nix
     ./home-manager.nix
   ];
 
