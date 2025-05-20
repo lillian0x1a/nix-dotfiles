@@ -1,4 +1,6 @@
 { config, pkgs, ... }:
 {
-  # Linux用の設定
+  imports = [
+    ./home-manager.nix;
+  ];
 }
