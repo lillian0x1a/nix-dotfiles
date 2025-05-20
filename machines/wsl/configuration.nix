@@ -12,8 +12,6 @@
     wget
     git
     lunarvim
-    gh
-    nix-ld-rs
     starship
   ];
 }
